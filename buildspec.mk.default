@@ -53,7 +53,7 @@ endif
 # Choose a product to build for.  Look in the products directory for ones
 # that work.
 ifndef TARGET_PRODUCT
-TARGET_PRODUCT:=ldp1
+TARGET_PRODUCT:=zoom2
 endif
 
 # Choose additional targets to always install, even when building
