@@ -37,7 +37,7 @@ key 115   VOLUME_UP
 key 114   VOLUME_DOWN
 key 116   POWER             WAKE
 key 212   CAMERA
-key 148	  CAMERA
+key 148	  DPAD_CENTER
 key 149	  SEARCH
 key 202   EXPLORER
 key 203   ENVELOPE
