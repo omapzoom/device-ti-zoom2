@@ -12,7 +12,8 @@ TARGET_NO_RADIOIMAGE := true
 USE_CAMERA_STUB := true
 
 # MultiMedia defines
-BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_GENERIC_AUDIO := true
+#BOARD_USES_ALSA_AUDIO := true
 HARDWARE_OMX := true
 OMX_JPEG := true
 OMX_VENDOR := ti
