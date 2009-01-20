@@ -282,7 +282,7 @@ service hcid /system/bin/hcid -s -n -f /etc/hcid.conf
     disabled
     oneshot
 
-service hciattach /system/bin/hciattach /dev/ttyS1 texas 115200
+service hciattach /system/bin/hciattach -n /dev/ttyS1 texas 115200
     user bluetooth
     group bluetooth net_bt_admin misc
     disabled
