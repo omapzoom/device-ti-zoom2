@@ -9,9 +9,12 @@ TARGET_NO_KERNEL := true
 
 TARGET_NO_RADIOIMAGE := true
 # TARGET_HARDWARE_3D := true
-# USE_CAMERA_STUB := true
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
 
 # MultiMedia defines
+# USE_CAMERA_STUB := true
 #BOARD_USES_GENERIC_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 #HARDWARE_OMX := true
