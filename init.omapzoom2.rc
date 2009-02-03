@@ -227,7 +227,7 @@ on property:persist.service.adb.enable=1
 on property:persist.service.adb.enable=0
     stop adbd
 
-service mux /system/bin/gsm0710muxd -v -s /dev/ttyS0 -n 3 -m basic
+service mux /system/bin/gsm0710muxd -s /dev/ttyS0 -n 3 -m basic
 #service mux /system/bin/gsm0710muxd -v -s /dev/ttyS0 -b 460800 -n 3 -m advanced
     user radio      
     group radio cache inet misc
