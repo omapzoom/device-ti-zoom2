@@ -31,4 +31,4 @@ BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 # WLAN 1271 Defines
-BOARD_WLAN_TI_WILINK_ROOT := system/wlan/ti/WiLink_6.1.0.0.67
+BOARD_WLAN_TI_WILINK_ROOT := system/wlan/ti/WiLink_6.1
