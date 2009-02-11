@@ -96,6 +96,10 @@ loglevel 3
     # change permissions for Camera
     chmod 0777 /dev/video5
 
+    # change permissions for Overlay
+    chmod 0777 /dev/video1
+    chmod 0777 /dev/video2
+
     # double check the perms, in case lost+found already exists, and set owner
     chown root root /lost+found
     chmod 0770 /lost+found
