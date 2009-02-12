@@ -321,7 +321,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -itiwlan0 -c/system/etc
     disabled
     oneshot
 
-service dhcpcd /system/bin/dhcpcd -d tiwlan0
+service dhcpcd /system/bin/dhcpcd -BKL -d tiwlan0
     disabled 
     oneshot
 
