@@ -16,6 +16,11 @@ $(file): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/omap_twl4030keypad.kl:system/usr/keylayout/omap_twl4030keypad.kl 
 
+# cellular operators apn list
+#
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/apns.xml:system/etc/apns-conf.xml
+
 # keyboard maps
 #
 include $(CLEAR_VARS)
