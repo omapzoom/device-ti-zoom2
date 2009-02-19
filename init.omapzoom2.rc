@@ -293,6 +293,11 @@ service hciattach /system/bin/hciattach -n /dev/ttyS1 texas 115200
     disabled
     oneshot
 
+service hciattach_legacy /system/bin/hciattach -n /dev/ttyS1 texas 115200
+    user bluetooth
+    group bluetooth net_bt_admin misc
+    disabled
+    oneshot
 
 service hfag /system/bin/sdptool add --channel=10 HFAG
     user bluetooth
