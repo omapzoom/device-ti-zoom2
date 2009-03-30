@@ -287,14 +287,18 @@ service hcid /system/bin/hcid -s -n -f /etc/bluez/hcid.conf
     disabled
     oneshot
 
-service hciattach /system/bin/hciattach -n /dev/ttyS1 texas 115200
-    user bluetooth
+service hciattach /system/bin/hciattach -n /dev/ttyS1 texas 3000000
+    user root
+# changing user to root from bluetooth is a potential security issue
+# service hciattach_legacy is used instead of hciattach because, we dont 
+# have nodes named ttyHS0
     group bluetooth net_bt_admin misc
     disabled
     oneshot
 
 service hciattach_legacy /system/bin/hciattach -n /dev/ttyS1 texas 3000000
-    user bluetooth
+    user root
+# changing user to root from bluetooth is a potential security issue
     group bluetooth net_bt_admin misc
     disabled
     oneshot
