@@ -21,8 +21,10 @@ BUILD_FM_RADIO := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TI_CAMERA_HAL := true
 HARDWARE_OMX := true
+#FW3A := true
+#ICAP := true
+#IMAGE_PROCESSING_PIPELINE := true 
 ifdef HARDWARE_OMX
-OMX_JPEG := true
 OMX_VENDOR := ti
 OMX_VENDOR_INCLUDES := \
    hardware/ti/omx/system/src/openmax_il/omx_core/inc \

@@ -95,10 +95,15 @@ loglevel 3
 
     # change permissions for Camera
     chmod 0777 /dev/video5
+    chmod 0777 /dev/video0
 
     # change permissions for Overlay
     chmod 0777 /dev/video1
     chmod 0777 /dev/video2
+    
+    # change permissions for Previewer and Resizer
+    chmod 0777 /dev/omap-previewer
+    chmod 0777 /dev/omap-resizer
 
     # double check the perms, in case lost+found already exists, and set owner
     chown root root /lost+found
@@ -124,11 +129,15 @@ on boot
 # set RLIMIT_NICE to allow priorities from 19 to -20
     setrlimit 13 40 40
 
+# Set timeout value for rmnet stats.
+    write /sys/devices/virtual/net/rmnet0/timeout_suspend 5000000
+
 # Define the oom_adj values for the classes of processes that can be
 # killed by the kernel.  These are used in ActivityManagerService.
     setprop ro.FOREGROUND_APP_ADJ 0
     setprop ro.VISIBLE_APP_ADJ 1
     setprop ro.SECONDARY_SERVER_ADJ 2
+    setprop ro.HOME_APP_ADJ 4
     setprop ro.HIDDEN_APP_MIN_ADJ 7
     setprop ro.CONTENT_PROVIDER_ADJ 14
     setprop ro.EMPTY_APP_ADJ 15
@@ -138,14 +147,18 @@ on boot
     setprop ro.FOREGROUND_APP_MEM 1536
     setprop ro.VISIBLE_APP_MEM 2048
     setprop ro.SECONDARY_SERVER_MEM 4096
+    setprop ro.HOME_APP_MEM 4096
     setprop ro.HIDDEN_APP_MEM 5120
     setprop ro.CONTENT_PROVIDER_MEM 5632
     setprop ro.EMPTY_APP_MEM 6144
 
 # Write value must be consistent with the above properties.
+# Note that the driver only supports 6 slots, so we have HOME_APP at the
+# same memory level as services.
     write /sys/module/lowmemorykiller/parameters/adj 0,1,2,7,14,15
 
     write /proc/sys/vm/overcommit_memory 1
+    write /proc/sys/vm/min_free_order_shift 4
     write /sys/module/lowmemorykiller/parameters/minfree 1536,2048,4096,5120,5632,6144
 
     # Set init its forked children's oom_adj.
@@ -169,6 +182,7 @@ on boot
     chown system system /sys/class/leds/keyboard-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/jogball-backlight/brightness
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
@@ -243,8 +257,11 @@ service servicemanager /system/bin/servicemanager
     onrestart restart zygote
     onrestart restart media
 
-service mountd /system/bin/mountd
-    socket mountd stream 0660 root mount
+service vold /system/bin/vold
+    socket vold stream 0660 root mount
+
+#service mountd /system/bin/mountd
+#    socket mountd stream 0660 root mount
 
 service debuggerd /system/bin/debuggerd
 
@@ -267,6 +284,10 @@ service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-sys
 service media /system/bin/mediaserver
     user media
     group system audio camera graphics inet net_bt net_bt_admin
+
+service fw3a /system/bin/fw3a
+    user root
+    group root
 
 service bootsound /system/bin/playmp3
     user media
