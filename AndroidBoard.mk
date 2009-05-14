@@ -19,7 +19,9 @@ PRODUCT_COPY_FILES += \
 # cellular operators apn list
 #
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/apns.xml:system/etc/apns-conf.xml
+	$(LOCAL_PATH)/apns.xml:system/etc/apns-conf.xml \
+	$(LOCAL_PATH)/vold.conf:system/etc/vold.conf
+
 
 # keyboard maps
 #
