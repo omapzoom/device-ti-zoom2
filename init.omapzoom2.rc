@@ -19,6 +19,7 @@ loglevel 3
 # create mountpoints and mount tmpfs on sqlite_stmt_journals
     mkdir /sdcard 0000 system system
     mkdir /system
+    mkdir /tmp 0777
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /sqlite_stmt_journals 01777 root root
