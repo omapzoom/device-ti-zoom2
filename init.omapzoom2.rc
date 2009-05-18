@@ -12,6 +12,7 @@ loglevel 3
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
+    export DSP_PATH /system/lib/dsp
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -92,7 +93,6 @@ loglevel 3
 
     # change permissions for bridge.  Symlink search directory
     chmod 0777 /dev/DspBridge
-    symlink /system/lib /lib
 
     # change permissions for Camera
     chmod 0777 /dev/video5
