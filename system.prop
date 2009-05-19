@@ -1,0 +1,6 @@
+# system.prop for zoom2
+# This overrides settings in the products/generic/system.prop file
+#
+ro.sf.lcd_density=240
+keyguard.no_require_sim=1
+
