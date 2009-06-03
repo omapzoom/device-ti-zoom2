@@ -16,7 +16,8 @@ on boot
 
 # Daemon processes to be run by init.
 
-service wlan_loader /system/bin/wlan_loader
+service wlan_loader /system/bin/wlan_loader \
+    -f /system/etc/wifi/fw1271_204.bin -i /system/etc/wifi/tiwlan.ini
     disabled
     oneshot
 
