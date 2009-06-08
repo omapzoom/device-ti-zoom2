@@ -1,6 +1,7 @@
 # OMAP Zoom 1 Board configuration
 #
 TARGET_NO_BOOTLOADER := true
+TARGET_CPU_ABI := armeabi
 
 # Kernel/Bootloader machine name
 #
