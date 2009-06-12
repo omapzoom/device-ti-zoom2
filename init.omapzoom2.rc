@@ -24,10 +24,6 @@ loglevel 3
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /sqlite_stmt_journals 01777 root root
-    mkdir /data/misc/ 0771 system system
-    mkdir /data/misc/wifi 0771 system system
-    mkdir /data/misc/wifi/sockets 0771 system system
-    mkdir /data/misc/dhcp 0777 system system
     mount tmpfs tmpfs /sqlite_stmt_journals size=4m
 
 # since system is also on root - we don't want to do this
@@ -61,6 +57,9 @@ loglevel 3
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/hcid 0770 bluetooth bluetooth
+    mkdir /data/misc/wifi 0771 system system
+    mkdir /data/misc/wifi/sockets 0771 system system
+    mkdir /data/misc/dhcp 0777 system system
     mkdir /data/local 0771 shell shell
     mkdir /data/local/tmp 0771 shell shell
     mkdir /data/data 0771 system system
