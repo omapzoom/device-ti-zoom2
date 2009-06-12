@@ -86,6 +86,12 @@ loglevel 3
     chmod 0777 /dev/pcmC0D0p
     chmod 0777 /dev/controlC0
     chmod 0777 /dev/timer
+        # work-around for alsa nodes permission issue
+        # fm device node
+    chmod 0777 /dev/snd/pcmC0D2p
+        # bt-pcm p/c device nodes
+    chmod 0777 /dev/snd/pcmC0D1p
+    chmod 0777 /dev/snd/pcmC0D1c
 
     # change permissions for modem
     chmod 0660 /dev/ttyS0
