@@ -13,6 +13,7 @@ loglevel 3
     export EXTERNAL_STORAGE /sdcard
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
     export DSP_PATH /system/lib/dsp
+    export BT_FW_PATH /system/lib/firmware
 
 # Backward compatibility
     symlink /system/etc /etc
