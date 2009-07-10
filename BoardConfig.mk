@@ -37,4 +37,4 @@ BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1
 endif
 
 # WLAN 1271 Defines
-BOARD_WLAN_TI_WILINK_ROOT := system/wlan/ti/WiLink_6.1
+BOARD_WLAN_TI_WILINK_ROOT := system/wlan/ti/wilink_6_1
