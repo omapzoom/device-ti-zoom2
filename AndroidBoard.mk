@@ -14,7 +14,9 @@ $(file): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 # keyboard layouts
 #
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/omap_twl4030keypad.kl:system/usr/keylayout/omap_twl4030keypad.kl 
+	$(LOCAL_PATH)/omap_twl4030keypad.kl:system/usr/keylayout/omap_twl4030keypad.kl \
+	$(LOCAL_PATH)/TWL4030_Keypad.kl:system/usr/keylayout/TWL4030_Keypad.kl
+
 
 # cellular operators apn list
 #
@@ -27,6 +29,8 @@ PRODUCT_COPY_FILES += \
 #
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := omap_twl4030keypad.kcm
+LOCAL_SRC_FILES := TWL4030_Keypad.kcm
+
 include $(BUILD_KEY_CHAR_MAP)
 
 # board specific init.rc
