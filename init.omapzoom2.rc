@@ -13,6 +13,9 @@ loglevel 3
     export EXTERNAL_STORAGE /sdcard
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
     export DSP_PATH /system/lib/dsp
+    export DEFAULT_BASEIMAGE /system/lib/dsp/baseimage.dof
+    export QOSDYN_FILE /system/lib/dsp/qosdyn_3430.dll64P
+    export PM_TBLFILE /system/etc/policytable.tbl
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -230,6 +233,12 @@ service console /system/bin/sh
 service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
     user root
     group audio
+    oneshot
+
+service omx_pm /system/bin/OMXPolicyManager
+    oneshot
+
+service omx_rm /system/bin/OMXResourceManager
     oneshot
 
 # adbd is controlled by the persist.service.adb.enable system property
