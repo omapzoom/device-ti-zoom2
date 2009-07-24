@@ -17,6 +17,8 @@ loglevel 3
     export QOSDYN_FILE /system/lib/dsp/qosdyn_3430.dll64P
     export PM_TBLFILE /system/etc/policytable.tbl
 
+# Location of BT firmware files
+    export BT_FW_PATH /system/lib/firmware    
 # Backward compatibility
     symlink /system/etc /etc
 
