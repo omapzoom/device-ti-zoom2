@@ -239,11 +239,11 @@ service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
     group audio
     oneshot
 
-service omx_pm /system/bin/OMXPolicyManager
-    oneshot
+#service omx_pm /system/bin/OMXPolicyManager
+#   oneshot
 
-service omx_rm /system/bin/OMXResourceManager
-    oneshot
+#service omx_rm /system/bin/OMXResourceManager
+#    oneshot
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
