@@ -15,6 +15,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_HAVE_BLUETOOTH := true
 # FM
 BUILD_FM_RADIO := true
+BOARD_HAVE_FM_ROUTING := true
 
 # MultiMedia defines
 #USE_CAMERA_STUB := true
