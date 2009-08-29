@@ -171,6 +171,9 @@ on boot
     # Set init its forked children's oom_adj.
     write /proc/1/oom_adj -16
 
+    # set ondemand scaling governor and other PM
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
+
     # Permissions for System Server and daemons.
     chmod 0444 /system/usr/keychars/omap_twl4030keypad.kcm.bin
     chmod 0444 /system/usr/keychars/TWL4030_Keypad.kcm.bin
@@ -239,11 +242,11 @@ service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
     group audio
     oneshot
 
-#service omx_pm /system/bin/OMXPolicyManager
-#   oneshot
+service omx_pm /system/bin/OMXPolicyManager
+    oneshot
 
-#service omx_rm /system/bin/OMXResourceManager
-#    oneshot
+service omx_rm /system/bin/OMXResourceManager
+    oneshot
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
