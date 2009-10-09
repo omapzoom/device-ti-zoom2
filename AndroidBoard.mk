@@ -23,11 +23,11 @@ PRODUCT_COPY_FILES += \
 # cellular operators apn list, vold config, OMX policy table
 #
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/apns.xml:system/etc/apns-conf.xml \
 	$(LOCAL_PATH)/vold.conf:system/etc/vold.conf \
 	$(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
         $(TI_OMX_POLICY_MANAGER)/src/policytable.tbl:system/etc/policytable.tbl
 
+#	$(LOCAL_PATH)/apns.xml:system/etc/apns-conf.xml \
 
 
 # keyboard maps
