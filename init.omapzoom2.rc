@@ -387,3 +387,8 @@ service dhcpcd /system/bin/dhcpcd -BKL -d tiwlan0
     disabled 
     oneshot
 
+if [ "$DECTYPE" != "SW" ]
+then
+export DECTYPE="HW"
+fi
+
