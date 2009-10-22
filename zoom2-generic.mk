@@ -24,7 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.dateformat=MM-dd-yyyy \
         ro.com.android.dataroaming=true 
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
 	Quake \
 	FieldTest \
 	SdkSetup
