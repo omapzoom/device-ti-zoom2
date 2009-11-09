@@ -5,6 +5,7 @@ TARGET_BOARD_PLATFORM := omap3
 #
 TARGET_NO_BOOTLOADER := true
 TARGET_CPU_ABI := armeabi
+TARGET_ARCH_VARIANT := armv7-a
 
 # Kernel/Bootloader machine name
 #
