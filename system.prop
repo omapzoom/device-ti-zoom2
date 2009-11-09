@@ -1,7 +1,12 @@
 # system.prop for zoom2
 # This overrides settings in the products/generic/system.prop file
 #
-ro.sf.lcd_density=240
+# rild.libpath=/system/lib/libreference-ril.so
+# rild.libargs=-d /dev/ttyS0
+# ro.sf.lcd_density=240
+opencore.asmd=1
 keyguard.no_require_sim=1
+wifi.interface=tiwlan0
+alsa.mixer.playback.master=DAC2 Analog
+alsa.mixer.capture.master=Analog
 
-wifi.interface = tiwlan0

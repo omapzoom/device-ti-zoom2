@@ -22,10 +22,10 @@ service wlan_loader /system/bin/wlan_loader \
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-    -Dtiwlan0 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+    -Dtiwlan0 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
+    socket wpa_tiwlan0 dgram 660 wifi wifi
 #   user wifi
     group wifi inet
-    socket wpa_tiwlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
@@ -36,3 +36,4 @@ service ifcfg_ti /system/bin/ifconfig tiwlan0 up
 service dhcpcd /system/bin/dhcpcd -BKL -d tiwlan0
     disabled 
     oneshot
+

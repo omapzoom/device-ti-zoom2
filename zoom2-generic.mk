@@ -14,20 +14,15 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/ti/zoom2/zoom2_generic.mk)
-#$(call inherit-product, build/target/product/generic.mk)
+$(call inherit-product, build/target/product/generic.mk)
 
-# Overrides
 PRODUCT_NAME := zoom2
-PRODUCT_MODEL := LogicPD Zoom2
-PRODUCT_LOCALES += en_US
-
+PRODUCT_BRAND := zoom
+PRODUCT_DEVICE := zoom2
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=true \
-	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html 
+        ro.com.android.dataroaming=true 
 
 PRODUCT_PACKAGES += \
 	Quake \
@@ -38,5 +33,4 @@ PRODUCT_COPY_FILES += vendor/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
 # Pick up audio package
 include frameworks/base/data/sounds/AudioPackage2.mk
-
 
