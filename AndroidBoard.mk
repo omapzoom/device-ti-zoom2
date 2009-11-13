@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-TI_OMX_POLICY_MANAGER := hardware/ti/omx/system/src/openmax_il/omx_policy_manager
+TI_OMX_POLICY_MANAGER := hardware/ti/omap3/omx/system/src/openmax_il/omx_policy_manager
 
 # kernel binary
 # this is here to use the pre-built kernel
