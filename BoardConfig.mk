@@ -41,6 +41,7 @@ HARDWARE_OMX := true
 #ICAP := true
 #IMAGE_PROCESSING_PIPELINE := true 
 ifdef HARDWARE_OMX
+OMX_JPEG := true
 OMX_VENDOR := ti
 OMX_VENDOR_INCLUDES := \
    hardware/ti/omx/system/src/openmax_il/omx_core/inc \
@@ -48,6 +49,7 @@ OMX_VENDOR_INCLUDES := \
 OMX_VENDOR_WRAPPER := TI_OMX_Wrapper
 BOARD_OPENCORE_LIBRARIES := libOMX_Core
 BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1
+BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 # This define enables the compilation of OpenCore's command line TestApps
