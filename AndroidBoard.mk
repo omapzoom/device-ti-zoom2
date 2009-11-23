@@ -1,6 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-TI_OMX_POLICY_MANAGER := hardware/ti/omap3/omx/system/src/openmax_il/omx_policy_manager
 
 # kernel binary
 # this is here to use the pre-built kernel
@@ -22,10 +21,13 @@ PRODUCT_COPY_FILES += \
 
 # cellular operators apn list, vold config, OMX policy table
 #
+ifeq ($(HARDWARE_OMX),true)
+TI_OMX_POLICY_MANAGER := hardware/ti/omap3/omx/system/src/openmax_il/omx_policy_manager/src/policytable.tbl:system/etc/policytable.tbl
+endif
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/vold.conf:system/etc/vold.conf \
 	$(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
-	$(TI_OMX_POLICY_MANAGER)/src/policytable.tbl:system/etc/policytable.tbl
+	$(TI_OMX_POLICY_MANAGER)
 
 # keyboard maps
 #
