@@ -42,11 +42,3 @@ include $(BUILD_KEY_CHAR_MAP)
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.omapzoom2.rc:root/init.omapzoom2.rc
 
-#include $(CLEAR_VARS)
-#LOCAL_MODULE := fw1271_204.bin
-#LOCAL_MODULE_TAGS := user
-#LOCAL_MODULE_CLASS := ETC
-#LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/wifi
-#LOCAL_SRC_FILES := $(LOCAL_MODULE)
-#include $(BUILD_PREBUILT)
-

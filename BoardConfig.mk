@@ -19,11 +19,11 @@ TARGET_NO_RADIOIMAGE := true
 #OMAP3_GL := false
 
 # Wifi
-#BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-#BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
-#WIFI_DRIVER_MODULE_PATH     := "/system/etc/wifi/tiwlan_drv.ko"
-#WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
-#WIFI_FIRMWARE_LOADER        := "wlan_loader"
+BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
+BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
+WIFI_DRIVER_MODULE_PATH     := "/system/etc/wifi/tiwlan_drv.ko"
+WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
+WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 # Bluetooth
 #BOARD_HAVE_BLUETOOTH := true
