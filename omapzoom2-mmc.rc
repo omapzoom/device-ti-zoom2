@@ -379,7 +379,8 @@ service flash_recovery /system/bin/flash_image recovery /system/recovery.img
     oneshot
 
 service wlan_loader /system/bin/tiwlan_loader \
-    -f /system/etc/wifi/firmware.bin -i /system/etc/wifi/tiwlan.ini
+    -f /system/etc/wifi/firmware.bin -i /system/etc/wifi/tiwlan.ini \
+    -e /system/etc/wifi/nvs_map.bin
     disabled
     oneshot
 
