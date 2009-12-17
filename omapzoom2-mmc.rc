@@ -248,8 +248,7 @@ service console /system/bin/sh
     console
 
 # load DSP firmware
-#service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
-service baseimage /system/bin/dspexec /system/lib/dsp/baseimage.dof
+service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
     user root
     group audio
     oneshot
