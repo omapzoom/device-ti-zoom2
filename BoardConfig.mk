@@ -33,11 +33,11 @@ BUILD_FM_RADIO := true
 BOARD_HAVE_FM_ROUTING := true
 
 # MultiMedia defines
-USE_CAMERA_STUB := true
+#USE_CAMERA_STUB := true
 #BOARD_USES_GENERIC_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 BUILD_WITH_ALSA_UTILS := true
-#BOARD_USES_TI_CAMERA_HAL := true
+BOARD_USES_TI_CAMERA_HAL := true
 HARDWARE_OMX := true
 #FW3A := true
 #ICAP := true
