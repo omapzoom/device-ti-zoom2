@@ -293,6 +293,11 @@ service vold /system/bin/vold
 
 service debuggerd /system/bin/debuggerd
 
+# Start of SGX driver
+service pvrsrv /system/bin/sh /system/bin/sgx/rc.pvr start
+    user root
+    oneshot
+
 service ril-daemon /system/bin/rild -l /system/lib/libidcc6071-ril.so -- -d /dev/pts/0
 #service ril-daemon /system/bin/rild -l /system/lib/libenforaedg308-ril.so -- -d /dev/pts/0
     socket rild stream 660 root radio
