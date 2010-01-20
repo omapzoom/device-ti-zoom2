@@ -341,7 +341,12 @@ service bluetoothd /system/bin/bluetoothd -d -n
     disabled
     oneshot
 
-service hciattach /system/bin/hciattach -n /dev/ttyS1 texas 3000000
+service uim /system/xbin/uim /dev/ttyS1 3000000 1 /sys/uim/pid
+   user root
+   group media bluetooth
+   oneshot
+
+service hciattach /system/bin/hciattach -l 
     user root
 # changing user to root from bluetooth is a potential security issue
 # service hciattach_legacy is used instead of hciattach because, we dont 

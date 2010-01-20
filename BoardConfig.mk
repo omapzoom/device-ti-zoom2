@@ -27,6 +27,7 @@ WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
+BUILD_HOTPLUG := true
 
 # FM
 BUILD_FM_RADIO := true
