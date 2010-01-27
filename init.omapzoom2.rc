@@ -182,8 +182,8 @@ on boot
     # Enabling Voltage OFF in idle path
     write /sys/power/voltage_off_while_idle 1
 
-    # Enablig DVFS with ondemand governor
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
+    # Enablig DVFS with conservative governor
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
 
     # Permissions for System Server and daemons.
     chmod 0444 /system/usr/keychars/omap_twl4030keypad.kcm.bin
