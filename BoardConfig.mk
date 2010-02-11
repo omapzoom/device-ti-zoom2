@@ -32,6 +32,7 @@ BUILD_HOTPLUG := true
 # FM
 BUILD_FM_RADIO := true
 BOARD_HAVE_FM_ROUTING := true
+FM_CHR_DEV_ST := true
 
 # MultiMedia defines
 #USE_CAMERA_STUB := true
