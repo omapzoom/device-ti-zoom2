@@ -65,6 +65,7 @@ loglevel 3
     mkdir /data/misc/wifi 0771 wifi wifi
     mkdir /data/misc/wifi/sockets 0771 wifi wifi
     mkdir /data/misc/dhcp 0777 wifi wifi
+    mkdir /data/misc/udhcpd 0777 wifi wifi
     mkdir /data/local 0771 shell shell
     mkdir /data/local/tmp 0771 shell shell
     mkdir /data/data 0771 system system
@@ -170,6 +171,10 @@ on boot
 
     # Set init its forked children's oom_adj.
     write /proc/1/oom_adj -16
+
+# Copying hostapd.conf (WLAN soft AP)
+    copy /system/etc/wifi/softap/hostapd.conf /data/misc/wifi/hostapd.conf
+    chown wifi wifi /data/misc/wifi
 
 # Enabling Power Management features
 
@@ -387,7 +392,8 @@ service flash_recovery /system/bin/flash_image recovery /system/recovery.img
     oneshot
 
 service wlan_loader /system/bin/tiwlan_loader \
-    -f /system/etc/wifi/firmware.bin -i /system/etc/wifi/tiwlan.ini \
+    -f /system/etc/wifi/firmware.bin \
+    -i /system/etc/wifi/tiwlan.ini \
     -e /data/misc/wifi/nvs_map.bin
     disabled
     oneshot
@@ -405,3 +411,18 @@ service dhcpcd /system/bin/dhcpcd -BKL -d tiwlan0
     disabled 
     oneshot
 
+# TI WLAN Soft AP related services and configuration
+
+service wlan_ap_loader /system/bin/tiap_loader \
+    -f /system/etc/wifi/softap/firmware_ap.bin \
+    -i /system/etc/wifi/softap/tiwlan_ap.ini
+    disabled
+    oneshot
+
+service udhcpd /system/bin/udhcpd /system/etc/udhcpd/udhcpdWlan.conf
+    disabled
+    oneshot
+
+service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
+    disabled
+    oneshot
