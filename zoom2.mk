@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/ti/zoom2/zoom2_generic.mk)
-#$(call inherit-product, build/target/product/generic.mk)
+$(call inherit-product, device/ti/zoom2/zoom2_generic.mk)
 
 # Overrides
 PRODUCT_NAME := zoom2
@@ -38,7 +37,7 @@ PRODUCT_PACKAGES += \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers
 
-PRODUCT_COPY_FILES += vendor/ti/zoom2/apns.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
 # Pick up audio package
 include frameworks/base/data/sounds/AudioPackage2.mk
