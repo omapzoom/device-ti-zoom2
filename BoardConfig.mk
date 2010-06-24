@@ -27,20 +27,20 @@ WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
 WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH := true
 
 # FM
-BUILD_FM_RADIO := true
-BOARD_HAVE_FM_ROUTING := true
-FM_CHR_DEV_ST := true
+#BUILD_FM_RADIO := true
+#BOARD_HAVE_FM_ROUTING := true
+#FM_CHR_DEV_ST := true
 
 # MultiMedia defines
-#USE_CAMERA_STUB := true
-#BOARD_USES_GENERIC_AUDIO := true
-BOARD_USES_ALSA_AUDIO := true
-BUILD_WITH_ALSA_UTILS := true
-BOARD_USES_TI_CAMERA_HAL := true
-HARDWARE_OMX := true
+USE_CAMERA_STUB := true
+BOARD_USES_GENERIC_AUDIO := true
+#BOARD_USES_ALSA_AUDIO := true
+#BUILD_WITH_ALSA_UTILS := true
+#BOARD_USES_TI_CAMERA_HAL := true
+#HARDWARE_OMX := true
 #FW3A := true
 #ICAP := true
 #IMAGE_PROCESSING_PIPELINE := true 
@@ -57,5 +57,5 @@ BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 # This define enables the compilation of OpenCore's command line TestApps
-BUILD_PV_TEST_APPS :=1
+#BUILD_PV_TEST_APPS :=1
 
