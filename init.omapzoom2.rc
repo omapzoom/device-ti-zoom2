@@ -143,8 +143,10 @@ loglevel 3
     mkdir /data/misc/vpn 0770 system system
     mkdir /data/misc/systemkeys 0700 system system
     mkdir /data/misc/vpn/profiles 0770 system system
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
     # give system access to wpa_supplicant.conf for backup and restore
     mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
     mkdir /data/local 0771 shell shell
@@ -520,7 +522,7 @@ service hciattach_legacy /system/bin/hciattach -n /dev/ttyS1 texas 3000000
     disabled
     oneshot
 
-service wlan_loader /system/bin/tiwlan_loader \
+service wlan_loader /system/bin/wlan_loader \
     -f /system/etc/wifi/firmware.bin \
     -i /system/etc/wifi/tiwlan.ini \
     -e /data/misc/wifi/nvs_map.bin
