@@ -265,20 +265,20 @@ on boot
 # Enabling Power Management features
 
     # Enabling sleep in idle path
-    write /sys/power/sleep_while_idle 1
+#    write /sys/power/sleep_while_idle 1
 
     # Enabling OFF mode
-    write /sys/power/enable_off_mode 1
+#    write /sys/power/enable_off_mode 1
 
     # Enabling Voltage OFF in idle path
-    write /sys/power/voltage_off_while_idle 1
+#    write /sys/power/voltage_off_while_idle 1
 
     # Enablig DVFS with conservative governor
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
+#    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
 
     # Enabling SmartReflex for Zoom3 OMAP3630
-    write  /sys/power/sr_vdd1_autocomp 1
-    write  /sys/power/sr_vdd2_autocomp 1
+#    write  /sys/power/sr_vdd1_autocomp 1
+#    write  /sys/power/sr_vdd2_autocomp 1
 
     # Permissions for System Server and daemons.
     chmod 0444 /system/usr/keychars/omap_twl4030keypad.kcm.bin
