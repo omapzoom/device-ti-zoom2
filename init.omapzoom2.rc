@@ -501,7 +501,7 @@ service bootsound /system/bin/playmp3
     group audio
     oneshot
 
-service uim /system/xbin/uim /dev/ttyS1 3000000 1 /sys/uim/pid 19
+service uim /system/xbin/uim /dev/ttyO1 3000000 1 /sys/uim/pid 21
    user root
    group media bluetooth
    oneshot
