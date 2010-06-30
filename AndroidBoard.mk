@@ -26,6 +26,7 @@ TI_OMX_POLICY_MANAGER := hardware/ti/omx/system/src/openmax_il/omx_policy_manage
 endif
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/vold.conf:system/etc/vold.conf \
+        $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
 	$(TI_OMX_POLICY_MANAGER)
 
 # keyboard maps
