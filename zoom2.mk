@@ -35,7 +35,8 @@ PRODUCT_PACKAGES += \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-	VisualizationWallpapers
+	VisualizationWallpapers \
+	CameraOMAP3
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
