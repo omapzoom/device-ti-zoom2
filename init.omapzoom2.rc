@@ -39,6 +39,7 @@ loglevel 3
     symlink /mnt/sdcard /sdcard
 
     mkdir /system
+    mkdir /tmp 0777
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /config 0500 root root
