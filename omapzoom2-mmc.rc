@@ -336,6 +336,9 @@ on boot
     setprop ro.radio.use-ppp yes
     setprop keyguard.no_require_sim 1 
     setprop ro.config.nocheckin yes
+
+# SGX driver
+    chmod 0666 /dev/pvrsrvkm
     
     class_start default
 
@@ -343,6 +346,11 @@ on boot
 ##
 service console /system/bin/sh
     console
+
+# Initialize the SGX driver
+service pvrsrvinit /system/bin/pvrsrvinit
+    user root
+    oneshot
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
@@ -488,11 +496,6 @@ service pppd_gprs /etc/init.gprs-pppd /dev/pts/1
    user root
    group radio cache inet misc
    disabled
-
-# Start of SGX driver
-service pvrsrv /system/bin/sh /system/bin/sgx/rc.pvr start
-    user root
-    oneshot
 
 service fw3a /system/bin/fw3a_core
     user root
