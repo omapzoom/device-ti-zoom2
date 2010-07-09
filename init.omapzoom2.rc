@@ -272,10 +272,7 @@ on boot
     mount debugfs debugfs /debug
 
 # Enabling sleep in idle path
-    # write /debug/pm_debug/sleep_while_idle 1
-
-
-
+    write /debug/pm_debug/sleep_while_idle 1
 
 # Enabling Voltage OFF in idle path
     # write /debug/pm_debug/voltage_off_while_idle 0
@@ -283,9 +280,8 @@ on boot
 # Enabling OFF mode
     write /debug/pm_debug/enable_off_mode 1
 
-
 # Enablig DVFS with ondemand governor
-    # write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
 
 # Enabling SmartReflex for Zoom3 OMAP3630
     # write  /sys/power/sr_vdd1_autocomp 1
