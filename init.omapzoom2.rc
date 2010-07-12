@@ -196,6 +196,10 @@ loglevel 3
     chmod 0777 /dev/omap-previewer
     chmod 0777 /dev/omap-resizer
 
+    chmod 0777 /dev/video6
+    chmod 0777 /dev/video10
+    chmod 0777 /dev/omap-prev2resz
+
 # double check the perms, in case lost+found already exists, and set owner
     chown root root /data/lost+found
     chmod 0770 /data/lost+found
