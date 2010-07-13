@@ -27,6 +27,7 @@ endif
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/vold.conf:system/etc/vold.conf \
         $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
 	$(TI_OMX_POLICY_MANAGER)
 
 # keyboard maps
