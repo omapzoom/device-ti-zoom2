@@ -17,7 +17,6 @@ loglevel 3
     export DSP_PATH /system/lib/dsp
     export DEFAULT_BASEIMAGE /system/lib/dsp/baseimage.dof
     export QOSDYN_FILE /system/lib/dsp/qosdyn_3430.dll64P
-    export PM_TBLFILE /system/etc/policytable.tbl
 
 # Location of BT firmware files
     export BT_FW_PATH /system/lib/firmware    
@@ -485,12 +484,6 @@ on boot
     service baseimage /system/bin/cexec.out /system/lib/dsp/baseimage.dof
         user root
         group audio
-        oneshot
-
-    service omx_pm /system/bin/OMXPolicyManager
-        oneshot
-
-    service omx_rm /system/bin/OMXResourceManager
         oneshot
 
     service mux /system/bin/gsm0710muxd -s /dev/ttyS0 -n 3 -m basic
