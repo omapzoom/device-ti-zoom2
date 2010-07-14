@@ -12,3 +12,4 @@ alsa.mixer.playback.master=DAC2 Analog
 alsa.mixer.capture.master=Analog
 #ro.media.dec.aud.wma.enabled=1
 #ro.media.dec.vid.wmv.enabled=1
+dalvik.vm.heapsize=32m
