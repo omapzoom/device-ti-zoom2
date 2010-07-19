@@ -286,6 +286,9 @@ on boot
     write  /sys/power/sr_vdd1_autocomp 1
     write  /sys/power/sr_vdd2_autocomp 1
 
+# Permissions for setting the DSP Frequency
+    chown media root /sys/power/dsp_freq
+
 # Permissions for System Server and daemons.
     chmod 0444 /system/usr/keychars/omap_twl4030keypad.kcm.bin
     chmod 0444 /system/usr/keychars/TWL4030_Keypad.kcm.bin
