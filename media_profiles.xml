@@ -158,5 +158,6 @@
         minChannels="1" maxChannels="2" />
 
     <VideoDecoderCap name="wmv" enabled="true" />
+    <AudioDecoderCap name="wma" enabled="true" />
 
 </MediaSettings>
