@@ -58,6 +58,8 @@ BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1
 BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
+COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT
+
 # This define enables the compilation of OpenCore's command line TestApps
 #BUILD_PV_TEST_APPS :=1
 
