@@ -20,6 +20,7 @@ $(call inherit-product, device/ti/zoom2/zoom2_generic.mk)
 PRODUCT_NAME := zoom2
 PRODUCT_MODEL := LogicPD Zoom2
 PRODUCT_LOCALES += en_US
+PRODUCT_PACKAGE_OVERLAYS := device/ti/zoom2/overlay
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
