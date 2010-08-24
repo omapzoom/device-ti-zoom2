@@ -583,6 +583,6 @@ on boot
         disabled
         oneshot
 
-    service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
+    service hostapd /system/bin/hostap -dd /data/misc/wifi/hostapd.conf
         disabled
         oneshot
