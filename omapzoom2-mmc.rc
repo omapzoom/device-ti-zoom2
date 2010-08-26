@@ -558,10 +558,6 @@ on boot
         disabled
         oneshot
 
-    service ifcfg_ti /system/bin/ifconfig tiwlan0 up
-        disabled
-        oneshot
-
     service wpa_supplicant /system/bin/wpa_supplicant -Dtiwlan0 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
         socket wpa_tiwlan0 dgram 660 wifi wifi
         disabled
@@ -576,10 +572,6 @@ on boot
     service wlan_ap_loader /system/bin/tiap_loader \
         -f /system/etc/wifi/softap/firmware_ap.bin \
         -i /system/etc/wifi/softap/tiwlan_ap.ini
-        disabled
-        oneshot
-
-    service udhcpd /system/bin/udhcpd /system/etc/udhcpd/udhcpdWlan.conf
         disabled
         oneshot
 
