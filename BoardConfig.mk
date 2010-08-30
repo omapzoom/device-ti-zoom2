@@ -4,7 +4,7 @@ TARGET_BOARD_PLATFORM := omap3
 # Board configuration
 #
 TARGET_NO_BOOTLOADER := true
-TARGET_CPU_ABI := armeabi
+TARGET_CPU_ABI := armeabi-v7a
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_PROVIDES_INIT_RC := true
 OMAP_ENHANCEMENT := true
