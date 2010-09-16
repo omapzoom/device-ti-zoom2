@@ -309,9 +309,6 @@ on boot
 # Permissions for setting the DSP Frequency
     chown media root /sys/power/dsp_freq
 
-# Set the McBSP transfer mode to threshold (opposed to elemenet mode)
-    write /sys/devices/platform/omap-mcbsp.2/dma_op_mode threshold
-
 # Permissions for System Server and daemons.
     chmod 0444 /system/usr/keychars/twl4030-keypad.kcm.bin
     chmod 0444 /system/usr/keychars/qwerty.kcm.bin
