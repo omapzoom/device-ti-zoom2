@@ -13,6 +13,7 @@ alsa.mixer.capture.master=Analog
 #ro.media.dec.aud.wma.enabled=1
 #ro.media.dec.vid.wmv.enabled=1
 dalvik.vm.heapsize=32m
+ro.opengles.version=131072
 
 # Define JPEG codec to load. (Set libskiahw with 1 & Set ARM with 0)
 jpeg.libskiahw.decoder.enable=1
