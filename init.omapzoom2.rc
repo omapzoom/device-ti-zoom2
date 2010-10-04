@@ -520,8 +520,8 @@ on boot
        disabled
 
     service fw3a /system/bin/fw3a_core
-        user root
-        group root
+        user media
+        group system camera
 
     service bootsound /system/bin/playmp3
         user media
