@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 include frameworks/base/data/sounds/AudioPackage2.mk
 
 # Install the features available on this device.
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     device/ti/zoom2/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
