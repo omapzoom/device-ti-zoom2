@@ -53,4 +53,5 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-
+# Install English (United States) TTS Language
+include external/svox/pico/lang/PicoLangEnUsInSystem.mk
