@@ -178,8 +178,8 @@ loglevel 3
     chown audio audio /dev/timer
 
 # change permissions for modem
-    chmod 0660 /dev/ttyS0
-    chown radio radio /dev/ttyS0
+#    chmod 0660 /dev/ttyS0
+#    chown radio radio /dev/ttyS0
 
 # change permissions for bridge.  Symlink search directory
     chmod 0777 /dev/DspBridge
@@ -508,11 +508,11 @@ on boot
         group audio
         oneshot
 
-    service mux /system/bin/gsm0710muxd -s /dev/ttyS0 -n 3 -m basic
+#    service mux /system/bin/gsm0710muxd -s /dev/ttyS0 -n 3 -m basic
     #service mux /system/bin/gsm0710muxd -v -s /dev/ttyS0 -b 460800 -n 3 -m advanced
-        user radio      
-        group radio cache inet misc
-        oneshot
+#        user radio      
+#        group radio cache inet misc
+#        oneshot
 
     service pppd_gprs /etc/init.gprs-pppd /dev/pts/1
        user root
