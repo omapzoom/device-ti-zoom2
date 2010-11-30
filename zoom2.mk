@@ -36,7 +36,8 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-	CameraOMAP3
+        CameraOMAP3 \
+        libomap_mm_library_jni
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
@@ -55,3 +56,7 @@ PRODUCT_COPY_FILES += \
 
 # Install English (United States) TTS Language
 include external/svox/pico/lang/PicoLangEnUsInSystem.mk
+
+# this make file is to extend FRAMEWORKS_BASE_SUBDIRS from pathmake.mk
+# and this is placed in common-open as this common between omap3 and omap4
+include device/ti/common-open/OmapMMLib.mk
