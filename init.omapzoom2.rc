@@ -156,6 +156,9 @@ loglevel 3
     mkdir /data/data 0771 system system
     mkdir /data/app-private 0771 system system
     mkdir /data/app 0771 system system
+    # We chown/chmod /data/app again in case it was created at build-time
+    chown system system /data/app
+    chmod 0771 /data/app
     mkdir /data/property 0700 root root
 
 # create dalvik-cache and double-check the perms
