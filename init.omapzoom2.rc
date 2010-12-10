@@ -313,8 +313,6 @@ on boot
     chown media root /sys/power/dsp_freq
 
 # Permissions for System Server and daemons.
-    chmod 0444 /system/usr/keychars/twl4030-keypad.kcm.bin
-    chmod 0444 /system/usr/keychars/qwerty.kcm.bin
     chown radio system /sys/android_power/state
     chown radio system /sys/android_power/request_state
     chown radio system /sys/android_power/acquire_full_wake_lock
