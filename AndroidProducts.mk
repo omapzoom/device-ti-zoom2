@@ -26,5 +26,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/zoom2.mk 
+    $(LOCAL_DIR)/full_zoom2.mk 
 

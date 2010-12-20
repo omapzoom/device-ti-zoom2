@@ -14,21 +14,41 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/ti/zoom2/zoom2_generic.mk)
+DEVICE_PACKAGE_OVERLAYS := device/ti/zoom2/overlay
 
-# Overrides
-PRODUCT_NAME := zoom2
-PRODUCT_MODEL := LogicPD Zoom2
-PRODUCT_LOCALES += en_US
-PRODUCT_PACKAGE_OVERLAYS := device/ti/zoom2/overlay
+# These are the hardware-specific configuration files
+PRODUCT_COPY_FILES := \
+        device/ti/zoom2/vold.fstab:system/etc/vold.fstab \
+#        device/ti/zoom2/egl.conf:system/etc/egl.conf
+#        device/ti/blaze/vold.conf:system/etc/vold.conf
 
+# Init files
+PRODUCT_COPY_FILES += \
+        device/ti/zoom2/init.omapzoom2.rc:root/init.omapzoom2.rc \
+        device/ti/zoom2/ueventd.omapzoom2.rc:root/ueventd.omapzoom2.rc
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=true \
-	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html 
+# Prebuilt kl keymaps
+PRODUCT_COPY_FILES += \
+        device/ti/zoom2/twl4030-keypad.kl:system/usr/keylayout/twl4030-keypad.kl
 
+# Generated kcm keymaps
+PRODUCT_PACKAGES := \
+        twl4030-keypad.kcm
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+        make_ext4fs \
+        setup_fs
+
+# OpenMAX IL configuration
+PRODUCT_COPY_FILES += \
+        device/ti/zoom2/media_profiles.xml:system/etc/media_profiles.xml
+
+# Camera
+PRODUCT_PACKAGES += \
+        CameraOMAP3 
+
+# Misc other modules
 PRODUCT_PACKAGES += \
 	Quake \
 	FieldTest \
@@ -73,11 +93,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
-# Pick up audio package
-include frameworks/base/data/sounds/AudioPackage2.mk
+# Libs
+PRODUCT_PACKAGES += \
+        libomap_mm_library_jni
 
-# Install the features available on this device.
+# These are the hardware-specific features
 PRODUCT_COPY_FILES += \
+    device/ti/zoom2/apns.xml:system/etc/apns-conf.xml \
     device/ti/zoom2/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
@@ -86,9 +108,21 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-# Install English (United States) TTS Language
-include external/svox/pico/lang/PicoLangEnUsInSystem.mk
+# Pick up audio package
+# no longer needed?
+#include frameworks/base/data/sounds/AudioPackage2.mk
 
-# this make file is to extend FRAMEWORKS_BASE_SUBDIRS from pathmake.mk
-# and this is placed in common-open as this common between omap3 and omap4
-include device/ti/common-open/OmapMMLib.mk
+
+# These are the hardware-specific settings that are stored in system properties.
+# Note that the only such settings should be the ones that are too low-level to
+# be reachable from resources or other mechanisms.
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.com.android.dateformat=MM-dd-yyyy \
+	ro.com.android.dataroaming=true 
+
+# See comment at the top of this file. This is where the other
+# half of the device-specific product definition file takes care
+# of the aspects that require proprietary drivers that aren't
+# commonly available
+$(call inherit-product-if-exists, vendor/ti/zoom2/device-vendor.mk)
+
