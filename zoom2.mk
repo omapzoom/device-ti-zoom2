@@ -44,35 +44,35 @@ PRODUCT_PACKAGES += \
 # libraries needed for a particular device
 PRODUCT_PACKAGES += \
 	01_Vendor_ti_omx.cfg \
-	libVendor_ti_omx.so \
-	libVendor_ti_omx_config_parser.so \
-	libOMX_Core.so \
-	libLCML.so \
-	libOMX.TI.Video.Decoder.so \
-	libOMX.TI.Video.encoder.so \
-	libOMX.TI.WBAMR.decode.so \
-	libOMX.TI.AAC.encode.so \
-	libOMX.TI.G722.decode.so \
-	libOMX.TI.MP3.decode.so \
-	libOMX.TI.WMA.decode.so \
-	libOMX.TI.Video.encoder.so \
-	libOMX.TI.WBAMR.encode.so \
-	libOMX.TI.G729.encode.so \
-	libOMX.TI.AAC.decode.so \
-	libOMX.TI.VPP.so \
-	libOMX.TI.G711.encode.so \
-	libOMX.TI.JPEG.encoder.so \
-	libOMX.TI.G711.decode.so \
-	libOMX.TI.ILBC.decode.so \
-	libOMX.TI.ILBC.encode.so \
-	libOMX.TI.AMR.encode.so \
-	libOMX.TI.G722.encode.so \
-	libOMX.TI.JPEG.decoder.so \
-	libOMX.TI.G726.encode.so \
-	libOMX.TI.G729.decode.so \
-	libOMX.TI.Video.Decoder.so \
-	libOMX.TI.AMR.decode.so \
-	libOMX.TI.G726.decode.so
+	libVendor_ti_omx \
+	libVendor_ti_omx_config_parser \
+	libOMX_Core \
+	libLCML \
+	libOMX.TI.Video.Decoder \
+	libOMX.TI.Video.encoder \
+	libOMX.TI.WBAMR.decode \
+	libOMX.TI.AAC.encode \
+	libOMX.TI.G722.decode \
+	libOMX.TI.MP3.decode \
+	libOMX.TI.WMA.decode \
+	libOMX.TI.Video.encoder \
+	libOMX.TI.WBAMR.encode \
+	libOMX.TI.G729.encode \
+	libOMX.TI.AAC.decode \
+	libOMX.TI.VPP \
+	libOMX.TI.G711.encode \
+	libOMX.TI.JPEG.encoder \
+	libOMX.TI.G711.decode \
+	libOMX.TI.ILBC.decode \
+	libOMX.TI.ILBC.encode \
+	libOMX.TI.AMR.encode \
+	libOMX.TI.G722.encode \
+	libOMX.TI.JPEG.decoder \
+	libOMX.TI.G726.encode \
+	libOMX.TI.G729.decode \
+	libOMX.TI.Video.Decoder \
+	libOMX.TI.AMR.decode \
+	libOMX.TI.G726.decode
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
