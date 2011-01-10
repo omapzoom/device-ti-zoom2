@@ -39,6 +39,41 @@ PRODUCT_PACKAGES += \
         CameraOMAP3 \
         libomap_mm_library_jni
 
+# OMX components
+# Addition of LOCAL_MODULE_TAGS requires us to specify
+# libraries needed for a particular device
+PRODUCT_PACKAGES += \
+	01_Vendor_ti_omx.cfg \
+	libVendor_ti_omx.so \
+	libVendor_ti_omx_config_parser.so \
+	libOMX_Core.so \
+	libLCML.so \
+	libOMX.TI.Video.Decoder.so \
+	libOMX.TI.Video.encoder.so \
+	libOMX.TI.WBAMR.decode.so \
+	libOMX.TI.AAC.encode.so \
+	libOMX.TI.G722.decode.so \
+	libOMX.TI.MP3.decode.so \
+	libOMX.TI.WMA.decode.so \
+	libOMX.TI.Video.encoder.so \
+	libOMX.TI.WBAMR.encode.so \
+	libOMX.TI.G729.encode.so \
+	libOMX.TI.AAC.decode.so \
+	libOMX.TI.VPP.so \
+	libOMX.TI.G711.encode.so \
+	libOMX.TI.JPEG.encoder.so \
+	libOMX.TI.G711.decode.so \
+	libOMX.TI.ILBC.decode.so \
+	libOMX.TI.ILBC.encode.so \
+	libOMX.TI.AMR.encode.so \
+	libOMX.TI.G722.encode.so \
+	libOMX.TI.JPEG.decoder.so \
+	libOMX.TI.G726.encode.so \
+	libOMX.TI.G729.decode.so \
+	libOMX.TI.Video.Decoder.so \
+	libOMX.TI.AMR.decode.so \
+	libOMX.TI.G726.decode.so
+
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
 # Pick up audio package
