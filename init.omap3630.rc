@@ -19,7 +19,7 @@ loglevel 3
     export QOSDYN_FILE /system/lib/dsp/qosdyn_3430.dll64P
 
 # Location of BT firmware files
-    export BT_FW_PATH /system/lib/firmware    
+    export BT_FW_PATH /system/lib/firmware
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -194,7 +194,7 @@ loglevel 3
 # change permissions for Overlay
     chmod 0777 /dev/video1
     chmod 0777 /dev/video2
-    
+
 # change permissions for overlay managers and display devices
     chmod 0777 /sys/devices/platform/omapdss/manager0/name
     chmod 0777 /sys/devices/platform/omapdss/manager1/name
@@ -274,7 +274,7 @@ on boot
 # Write value must be consistent with the above properties.
 # Note that the driver only supports 6 slots, so we have HOME_APP at the
 # same memory level as services.
-    
+
     write /sys/module/lowmemorykiller/parameters/adj 0,1,2,7,14,15
     write /proc/sys/vm/overcommit_memory 1
     write /proc/sys/vm/min_free_order_shift 4
@@ -291,7 +291,7 @@ on boot
     copy /system/etc/wifi/softap/hostapd.conf /data/misc/wifi/hostapd.conf
     chown wifi wifi /data/misc/wifi
 
-# Enable Power Management 
+# Enable Power Management
 
 # Mount Debug file system
     mkdir /debug
@@ -361,12 +361,12 @@ on boot
 
 # Define modem related settings
     setprop ro.radio.use-ppp yes
-    setprop keyguard.no_require_sim 1 
+    setprop keyguard.no_require_sim 1
     setprop ro.config.nocheckin yes
 
 # SGX driver
     chmod 0666 /dev/pvrsrvkm
-    
+
     class_start default
 
 ## Daemon processes to be run by init.
@@ -511,7 +511,7 @@ on boot
 
 #    service mux /system/bin/gsm0710muxd -s /dev/ttyS0 -n 3 -m basic
     #service mux /system/bin/gsm0710muxd -v -s /dev/ttyS0 -b 460800 -n 3 -m advanced
-#        user radio      
+#        user radio
 #        group radio cache inet misc
 #        oneshot
 
@@ -534,11 +534,11 @@ on boot
        group media bluetooth
        oneshot
 
-    service hciattach /system/bin/hciattach -l 
+    service hciattach /system/bin/hciattach -l
         user root
 
 # changing user to root from bluetooth is a potential security issue
-# service hciattach_legacy is used instead of hciattach because, we dont 
+# service hciattach_legacy is used instead of hciattach because, we dont
 # have nodes named ttyHS0
     group bluetooth net_bt_admin misc
     disabled
@@ -565,7 +565,7 @@ on boot
         oneshot
 
     service dhcpcd /system/bin/dhcpcd -ABKL -d tiwlan0
-        disabled 
+        disabled
         oneshot
 
 # TI WLAN Soft AP related services and configuration

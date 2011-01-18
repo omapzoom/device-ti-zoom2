@@ -24,8 +24,8 @@ PRODUCT_COPY_FILES := \
 
 # Init files
 PRODUCT_COPY_FILES += \
-        device/ti/zoom2/init.omapzoom2.rc:root/init.omapzoom2.rc \
-        device/ti/zoom2/ueventd.omapzoom2.rc:root/ueventd.omapzoom2.rc
+        device/ti/zoom2/init.omap3630.rc:root/init.omap3630.rc \
+        device/ti/zoom2/ueventd.omap3630.rc:root/ueventd.omap3630.rc
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
@@ -46,7 +46,15 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-        CameraOMAP3 
+        CameraOMAP3
+
+# Overlay
+PRODUCT_PACKAGES += \
+        overlay.omap3
+
+# Audio HAL
+PRODUCT_PACKAGES += \
+        alsa.omap3
 
 # Misc other modules
 PRODUCT_PACKAGES += \
@@ -56,7 +64,6 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-        CameraOMAP3 \
         libomap_mm_library_jni
 
 # OMX components
