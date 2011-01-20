@@ -40,6 +40,21 @@ PRODUCT_PACKAGES += \
         make_ext4fs \
         setup_fs
 
+# DSP Bridge userspace samples
+PRODUCT_PACKAGES += \
+        dmmcopy.c \
+        scale.out \
+        scale_dyn.out \
+        dynreg.out \
+        strmcopy.out \
+        strmcopy_dyn.out \
+        instutility.out \
+        zerocopymsg.out \
+        cexec.out \
+        ping.out \
+        faultapp.out \
+        qostest.out
+
 # OpenMAX IL configuration
 PRODUCT_COPY_FILES += \
         device/ti/zoom2/media_profiles.xml:system/etc/media_profiles.xml
