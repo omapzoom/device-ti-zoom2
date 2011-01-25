@@ -64,7 +64,9 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-        libomap_mm_library_jni
+	libomap_mm_library_jni \
+	libRS \
+	librs_jni
 
 # OMX components
 # Addition of LOCAL_MODULE_TAGS requires us to specify
