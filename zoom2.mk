@@ -72,7 +72,31 @@ PRODUCT_PACKAGES += \
 	libOMX.TI.G729.decode \
 	libOMX.TI.Video.Decoder \
 	libOMX.TI.AMR.decode \
-	libOMX.TI.G726.decode
+	libOMX.TI.G726.decode \
+        AacDecTest \
+        AacEncoder_Test \
+        AmrDecTest_common \
+        G711Decoder_Test \
+        G711EncTest \
+        G722Decoder_Test \
+        G722EncTest \
+        G726DecTest \
+        G726EncTest \
+        G729DecTest \
+        G729EncTest_common \
+        iLBCDecoderTest \
+        iLBCEncTest_common \
+        JpegTestCommon \
+        JPEGTestEnc_common \
+        Mp3DecTest \
+        NBAMREncoder_Test \
+        tiomxplayer \
+        VidDecTest_common \
+        VideoEncTest \
+        VPPTest_common \
+        WBAmrDecTest_common \
+        WBAMREncoder_Test \
+        WmaDecTest_common
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
