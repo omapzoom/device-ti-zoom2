@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         alsa.omap3
 
+# SkiaHW
+PRODUCT_PACKAGES += \
+        libskiahw
+
 # Misc other modules
 PRODUCT_PACKAGES += \
 	Quake \
