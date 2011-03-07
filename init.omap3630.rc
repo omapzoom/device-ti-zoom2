@@ -542,7 +542,7 @@ on boot
         group audio
         oneshot
 
-    service uim /system/bin/uim-rfkill /dev/ttyO1 3000000 1  22
+    service uim /system/bin/uim-sysfs
        user root
        group media bluetooth
        oneshot
