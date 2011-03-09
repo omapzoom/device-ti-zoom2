@@ -65,7 +65,7 @@ BOARD_CAMERA_LIBRARIES := libcamera
 endif
 
 ifdef OMAP_ENHANCEMENT
-COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT
+COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP3
 endif
 
 # This define enables the compilation of OpenCore's command line TestApps
