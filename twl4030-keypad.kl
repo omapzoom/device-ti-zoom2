@@ -27,7 +27,6 @@ key 227   STAR
 key 65    STAR
 key 231   CALL              WAKE_DROPPED
 key 102   CALL              WAKE_DROPPED
-key 232   DPAD_CENTER       WAKE_DROPPED
 key 108   DPAD_DOWN         WAKE_DROPPED
 key 103   DPAD_UP           WAKE_DROPPED
 key 63    HOME              WAKE
@@ -67,7 +66,7 @@ key 38    L
 key 39    SEMICOLON
 key 40    APOSTROPHE
 key 61    DEL
-key 353   ENTER
+key 353   DPAD_CENTER      WAKE_DROPPED
 key 44    Z
 key 45    X
 key 46    C
@@ -75,7 +74,6 @@ key 47    V
 key 48    B
 key 49    N
 key 50    M
-key 51    COMMA
 key 52    PERIOD
 key 53    SLASH
 key 28    ENTER
