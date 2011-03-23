@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
 
 # DSP Bridge userspace samples
 PRODUCT_PACKAGES += \
-        dmmcopy.c \
+        dmmcopy.out \
         scale.out \
         scale_dyn.out \
         dynreg.out \
