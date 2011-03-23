@@ -77,47 +77,70 @@ PRODUCT_PACKAGES += \
 
 # Misc other modules
 PRODUCT_PACKAGES += \
-	Quake \
-	FieldTest \
-	LiveWallpapers \
-	LiveWallpapersPicker \
-	MagicSmokeWallpapers \
-	VisualizationWallpapers \
-	libomap_mm_library_jni \
-	libRS \
-	librs_jni
+    Quake \
+    FieldTest \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    MagicSmokeWallpapers \
+    VisualizationWallpapers \
+    libomap_mm_library_jni \
+    libRS \
+    librs_jni
 
 # OMX components
 # Addition of LOCAL_MODULE_TAGS requires us to specify
 # libraries needed for a particular device
 PRODUCT_PACKAGES += \
-	libOMX_Core \
-	libLCML \
-	libOMX.TI.Video.Decoder \
-	libOMX.TI.Video.encoder \
-	libOMX.TI.WBAMR.decode \
-	libOMX.TI.AAC.encode \
-	libOMX.TI.G722.decode \
-	libOMX.TI.MP3.decode \
-	libOMX.TI.WMA.decode \
-	libOMX.TI.Video.encoder \
-	libOMX.TI.WBAMR.encode \
-	libOMX.TI.G729.encode \
-	libOMX.TI.AAC.decode \
-	libOMX.TI.VPP \
-	libOMX.TI.G711.encode \
-	libOMX.TI.JPEG.encoder \
-	libOMX.TI.G711.decode \
-	libOMX.TI.ILBC.decode \
-	libOMX.TI.ILBC.encode \
-	libOMX.TI.AMR.encode \
-	libOMX.TI.G722.encode \
-	libOMX.TI.JPEG.decoder \
-	libOMX.TI.G726.encode \
-	libOMX.TI.G729.decode \
-	libOMX.TI.Video.Decoder \
-	libOMX.TI.AMR.decode \
-	libOMX.TI.G726.decode
+    libOMX_Core \
+    libLCML \
+    libOMX.TI.Video.Decoder \
+    libOMX.TI.Video.encoder \
+    libOMX.TI.WBAMR.decode \
+    libOMX.TI.AAC.encode \
+    libOMX.TI.G722.decode \
+    libOMX.TI.MP3.decode \
+    libOMX.TI.WMA.decode \
+    libOMX.TI.Video.encoder \
+    libOMX.TI.WBAMR.encode \
+    libOMX.TI.G729.encode \
+    libOMX.TI.AAC.decode \
+    libOMX.TI.VPP \
+    libOMX.TI.G711.encode \
+    libOMX.TI.JPEG.encoder \
+    libOMX.TI.G711.decode \
+    libOMX.TI.ILBC.decode \
+    libOMX.TI.ILBC.encode \
+    libOMX.TI.AMR.encode \
+    libOMX.TI.G722.encode \
+    libOMX.TI.JPEG.decoder \
+    libOMX.TI.G726.encode \
+    libOMX.TI.G729.decode \
+    libOMX.TI.Video.Decoder \
+    libOMX.TI.AMR.decode \
+    libOMX.TI.G726.decode
+
+# OMX Test app
+PRODUCT_PACKAGES += \
+    VidDecTest_common \
+    VideoEncTest \
+    Mp3DecTest \
+    AacDecTest \
+    AacEncoder_Test \
+    AmrDecTest_common \
+    NBAMREncoder_Test \
+    WBAmrDecTest_common \
+    WBAMREncoder_Test \
+    WmaDecTest_common \
+    G711Decoder_Test \
+    G711EncTest \
+    G722Decoder_Test \
+    G722EncTest \
+    G726DecTest \
+    G726EncTest \
+    G729DecTest \
+    G729EncTest_common \
+    iLBCDecoderTest \
+    iLBCEncTest_common
 
 PRODUCT_COPY_FILES += device/ti/zoom2/apns.xml:system/etc/apns-conf.xml
 
@@ -145,8 +168,8 @@ PRODUCT_COPY_FILES += \
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=true 
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=true
 
 # See comment at the top of this file. This is where the other
 # half of the device-specific product definition file takes care
