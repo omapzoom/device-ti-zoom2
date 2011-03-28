@@ -292,10 +292,6 @@ on boot
     write /proc/sys/vm/dirty_expire_centisecs 200
     write /proc/sys/vm/dirty_background_ratio  5
 
-# Copying hostapd.conf (WLAN soft AP)
-    copy /system/etc/wifi/softap/hostapd.conf /data/misc/wifi/hostapd.conf
-    chown wifi wifi /data/misc/wifi
-
 # Enable Power Management
 
 # Mount Debug file system
@@ -586,6 +582,10 @@ on boot
     service wlan_ap_loader /system/bin/tiap_loader \
         -f /system/etc/wifi/softap/firmware_ap.bin \
         -i /system/etc/wifi/softap/tiwlan_ap.ini
+        disabled
+        oneshot
+
+    service ifcfg_softap /system/bin/ifconfig tiap0 up
         disabled
         oneshot
 

@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         alsa.omap3
 
+# Wifi
+PRODUCT_PACKAGES += \
+        hostap
+
 # SkiaHW
 PRODUCT_PACKAGES += \
         libskiahw
