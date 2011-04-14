@@ -581,7 +581,8 @@ on boot
 
     service wlan_ap_loader /system/bin/tiap_loader \
         -f /system/etc/wifi/softap/firmware_ap.bin \
-        -i /system/etc/wifi/softap/tiwlan_ap.ini
+        -i /system/etc/wifi/softap/tiwlan_ap.ini \
+        -e /data/misc/wifi/nvs_map.bin
         disabled
         oneshot
 
