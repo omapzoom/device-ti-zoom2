@@ -533,7 +533,7 @@ on boot
         user media
         group system camera
 
-    service bootsound /system/bin/playmp3
+    service bootsound /system/bin/stagefright -a -o /system/media/audio/notifications/Heaven.ogg
         user media
         group audio
         oneshot
