@@ -573,7 +573,7 @@ on boot
         disabled
         oneshot
 
-    service dhcpcd /system/bin/dhcpcd -ABKL -d tiwlan0
+    service dhcpcd_tiwlan0 /system/bin/dhcpcd -ABKL -d tiwlan0
         disabled
         oneshot
 
