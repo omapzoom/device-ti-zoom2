@@ -42,7 +42,7 @@ loglevel 3
     symlink /mnt/sdcard /sdcard
 
     mkdir /system
-    mkdir /tmp 0777
+    mkdir /tmp 0775 root system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /config 0500 root root
@@ -203,27 +203,6 @@ loglevel 3
     chmod 0777 /dev/video1
     chmod 0777 /dev/video2
 
-# change permissions for overlay managers and display devices
-    chmod 0777 /sys/devices/platform/omapdss/manager0/name
-    chmod 0777 /sys/devices/platform/omapdss/manager1/name
-
-    chmod 0777 /sys/devices/platform/omapdss/display0/name
-    chmod 0777 /sys/devices/platform/omapdss/display1/name
-
-    chmod 0777 /sys/devices/platform/omapdss/display0/enabled
-    chmod 0777 /sys/devices/platform/omapdss/display1/enabled
-
-    chmod 0777 /sys/devices/platform/omapdss/display1/timings
-    chmod 0777 /sys/devices/platform/omapdss/display0/timings
-
-    chmod 0777 /sys/devices/platform/omapdss/overlay0/manager
-    chmod 0777 /sys/devices/platform/omapdss/overlay1/manager
-    chmod 0777 /sys/devices/platform/omapdss/overlay2/manager
-
-    chmod 0777 /sys/devices/platform/omapdss/overlay0/enabled
-    chmod 0777 /sys/devices/platform/omapdss/overlay1/enabled
-    chmod 0777 /sys/devices/platform/omapdss/overlay2/enabled
-
 # change permissions for Previewer and Resizer
     chmod 0777 /dev/omap-previewer
     chmod 0777 /dev/omap-resizer
@@ -360,6 +339,58 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_def
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
+
+# Permissions for overlay managers and display devices
+    chmod 0664 /sys/devices/platform/omapdss/manager0/name
+    chmod 0664 /sys/devices/platform/omapdss/manager1/name
+
+    chmod 0664 /sys/devices/platform/omapdss/display0/name
+    chmod 0664 /sys/devices/platform/omapdss/display1/name
+
+    chmod 0664 /sys/devices/platform/omapdss/display0/enabled
+    chmod 0664 /sys/devices/platform/omapdss/display1/enabled
+
+    chmod 0664 /sys/devices/platform/omapdss/display1/timings
+    chmod 0664 /sys/devices/platform/omapdss/display0/timings
+
+    chmod 0664 /sys/devices/platform/omapdss/overlay0/manager
+    chmod 0664 /sys/devices/platform/omapdss/overlay1/manager
+    chmod 0664 /sys/devices/platform/omapdss/overlay2/manager
+
+    chmod 0664 /sys/devices/platform/omapdss/overlay0/enabled
+    chmod 0664 /sys/devices/platform/omapdss/overlay1/enabled
+    chmod 0664 /sys/devices/platform/omapdss/overlay2/enabled
+
+    chown system camera /sys/devices/platform/omapdss/manager0/name
+    chown system camera /sys/devices/platform/omapdss/manager1/name
+
+    chown system camera /sys/devices/platform/omapdss/display0/name
+    chown system camera /sys/devices/platform/omapdss/display1/name
+
+    chown system camera /sys/devices/platform/omapdss/display0/enabled
+    chown system camera /sys/devices/platform/omapdss/display1/enabled
+
+    chown system camera /sys/devices/platform/omapdss/display1/timings
+    chown system camera /sys/devices/platform/omapdss/display0/timings
+
+    chown system camera /sys/devices/platform/omapdss/overlay0/manager
+    chown system camera /sys/devices/platform/omapdss/overlay1/manager
+    chown system camera /sys/devices/platform/omapdss/overlay2/manager
+
+    chown system camera /sys/devices/platform/omapdss/overlay0/enabled
+    chown system camera /sys/devices/platform/omapdss/overlay1/enabled
+    chown system camera /sys/devices/platform/omapdss/overlay2/enabled
+
+# Permissions for Resizer
+    chmod 0664 /sys/devices/platform/omap_vout/video4linux/video1/isprsz_mode
+    chmod 0664 /sys/devices/platform/omap_vout/video4linux/video1/isprsz_enable
+    chmod 0664 /sys/devices/platform/omap_vout/video4linux/video2/isprsz_mode
+    chmod 0664 /sys/devices/platform/omap_vout/video4linux/video2/isprsz_enable
+
+    chown system camera /sys/devices/platform/omap_vout/video4linux/video1/isprsz_mode
+    chown system camera /sys/devices/platform/omap_vout/video4linux/video1/isprsz_enable
+    chown system camera /sys/devices/platform/omap_vout/video4linux/video2/isprsz_mode
+    chown system camera /sys/devices/platform/omap_vout/video4linux/video2/isprsz_enable
 
 # Define TCP buffer sizes for various networks
 # ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
