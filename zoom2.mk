@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         libskiahw
 
+# Lights
+PRODUCT_PACKAGES += \
+        lights.omap3
+
 # Misc other modules
 PRODUCT_PACKAGES += \
     Quake \
