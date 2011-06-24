@@ -84,6 +84,7 @@ endif
 ifndef CUSTOM_LOCALES
 #CUSTOM_LOCALES:=
 endif
+CUSTOM_LOCALES += mdpi hdpi
 
 # If you have a special place to put your ouput files, set this, otherwise
 # it goes to <build-root>/out
