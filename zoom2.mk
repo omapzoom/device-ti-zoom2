@@ -85,7 +85,14 @@ PRODUCT_PACKAGES += audio.a2dp.default
 
 # Wifi
 PRODUCT_PACKAGES += \
-        hostap
+	dhcpcd.conf \
+        wpa_supplicant.conf \
+	wifical.sh \
+	TQS_D_1.7.ini \
+	TQS_D_1.7_127x.ini \
+	crda \
+	regulatory.bin \
+	calibrator
 
 # SkiaHW
 PRODUCT_PACKAGES += \
@@ -177,6 +184,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
 # Hardware composer configuration
@@ -207,5 +215,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product-if-exists, vendor/ti/zoom2/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/ti/proprietary/omap3/ti-omap3-vendor.mk)
 $(call inherit-product, hardware/ti/omap3/omap3.mk)
-$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk) 
-
+$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
+$(call inherit-product-if-exists, device/ti/proprietary-open/wl12xx/wlan/wl12xx-wlan-fw-products.mk)
