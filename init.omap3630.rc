@@ -32,10 +32,6 @@ loglevel 3
     mkdir /mnt 0775 root system
     mkdir /mnt/sdcard 0000 system system
 
-# Right now vendor lives on the same filesystem as system,
-# but someday that may change.
-    symlink /system/vendor /vendor
-
 # Create cgroup mount point for cpu accounting
     mkdir /acct
     mount cgroup none /acct cpuacct
@@ -187,13 +183,6 @@ loglevel 3
     chown audio audio /dev/controlC0
     chown audio audio /dev/timer
 
-    chmod 0777 /dev/snd/timer
-    chmod 0777 /dev/snd/controlC0
-    chmod 0777 /dev/snd/pcmC0D0c
-    chmod 0777 /dev/snd/pcmC0D0p
-    chmod 0777 /dev/snd/pcmC0D1c
-    chmod 0777 /dev/snd/pcmC0D1p
-
 # change permissions for modem
 #    chmod 0660 /dev/ttyS0
 #    chown radio radio /dev/ttyS0
@@ -208,8 +197,6 @@ loglevel 3
 # change permissions for Overlay
     chmod 0777 /dev/video1
     chmod 0777 /dev/video2
-
-chmod 0777 /dev/dsscomp
 
 # change permissions for overlay managers and display devices
     chmod 0777 /sys/devices/platform/omapdss/manager0/name
@@ -252,11 +239,6 @@ chmod 0777 /dev/dsscomp
     chmod 0660 sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     write sys/class/rfkill/rfkill0/state 0
-
-    chown system system /sys/class/android_usb/android0/f_mass_storage/lun/file
-    chmod 0660 /sys/class/android_usb/android0/f_mass_storage/lun/file
-    chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
-    chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
 
 on boot
 # basic network init
@@ -382,56 +364,6 @@ on boot
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
 
-# Used to disable USB when switching states
-    on property:sys.usb.config=none
-        stop adbd
-        write /sys/class/android_usb/android0/enable 0
-        write /sys/class/android_usb/android0/bDeviceClass 0
-        setprop sys.usb.state $sys.usb.config
-
-# adb only USB configuration
-# This should only be used during device bringup
-# and as a fallback if the USB manager fails to set a standard configuration
-    on property:sys.usb.config=adb
-        write /sys/class/android_usb/android0/enable 0
-        write /sys/class/android_usb/android0/idVendor 18d1
-        write /sys/class/android_usb/android0/idProduct D002
-        write /sys/class/android_usb/android0/functions $sys.usb.config
-        write /sys/class/android_usb/android0/enable 1
-        start adbd
-        setprop sys.usb.state $sys.usb.config
-
-# USB accessory configuration
-    on property:sys.usb.config=accessory
-        write /sys/class/android_usb/android0/enable 0
-        write /sys/class/android_usb/android0/idVendor 18d1
-        write /sys/class/android_usb/android0/idProduct 2d00
-        write /sys/class/android_usb/android0/functions $sys.usb.config
-        write /sys/class/android_usb/android0/enable 1
-        setprop sys.usb.state $sys.usb.config
-
-# USB accessory configuration, with adb
-    on property:sys.usb.config=accessory,adb
-        write /sys/class/android_usb/android0/enable 0
-        write /sys/class/android_usb/android0/idVendor 18d1
-        write /sys/class/android_usb/android0/idProduct 2d01
-        write /sys/class/android_usb/android0/functions $sys.usb.config
-        write /sys/class/android_usb/android0/enable 1
-        start adbd
-        setprop sys.usb.state $sys.usb.config
-
-# Used to set USB configuration at boot and to switch the configuration
-# when changing the default configuration
-    on property:persist.sys.usb.config=*
-        setprop sys.usb.config $persist.sys.usb.config
-
-
-# Set this property so surfaceflinger is not started by system_init
-    setprop system_init.startsurfaceflinger 0
-
-    class_start core
-    class_start main
-
 # Define modem related settings
     setprop ro.radio.use-ppp yes
     setprop keyguard.no_require_sim 1
@@ -463,18 +395,11 @@ on boot
     on property:ro.kernel.qemu=1
         start adbd
 
-# This property trigger has added to imitiate the previous behavior of "adb root".
-# The adb gadget driver used to reset the USB bus when the adbd daemon exited,
-# and the host side adb relied on this behavior to force it to reconnect with the
-# new adbd instance after init relaunches it. So now we force the USB bus to reset
-# here when adbd sets the service.adb.root property to 1.  We also restart adbd here
-# rather than waiting for init to notice its death and restarting it so the timing
-# of USB resetting and adb restarting more closely matches the previous behavior.
-    on property:service.adb.root=1
-        write /sys/class/android_usb/android0/enable 0
-        restart adbd
-        write /sys/class/android_usb/android0/enable 1
+    on property:persist.service.adb.enable=1
+        start adbd
 
+    on property:persist.service.adb.enable=0
+        stop adbd
 
     service servicemanager /system/bin/servicemanager
         user system
@@ -487,11 +412,7 @@ on boot
         ioprio be 2
 
     service netd /system/bin/netd
-#        class main
         socket netd stream 0660 root system
-        socket dnsproxyd stream 0660 root inet
-#   service netd /system/bin/netd
-#        socket netd stream 0660 root system
 
     service debuggerd /system/bin/debuggerd
 
@@ -504,19 +425,11 @@ on boot
     user root
     group radio cache inet misc audio
 
-	service surfaceflinger /system/bin/surfaceflinger
-    class main
-    user system
-    group graphics
-    onrestart restart zygote
-
-
     service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server
         socket zygote stream 666
         onrestart write /sys/android_power/request_state wake
         onrestart write /sys/power/state on
         onrestart restart media
-#        onrestart restart netd
 
     service media /system/bin/mediaserver
         user media
@@ -660,7 +573,7 @@ on boot
         disabled
         oneshot
 
-    service dhcpcd_tiwlan0 /system/bin/dhcpcd -ABKL -d tiwlan0
+    service dhcpcd /system/bin/dhcpcd -ABKL -d tiwlan0
         disabled
         oneshot
 
