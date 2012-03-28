@@ -188,7 +188,7 @@
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="8000" maxBitRate="64000"
         minSampleRate="8000" maxSampleRate="96000"
-        minChannels="1" maxChannels="2" />
+        minChannels="2" maxChannels="2" />
 
     <VideoDecoderCap name="wmv" enabled="true" />
     <AudioDecoderCap name="wma" enabled="true" />
