@@ -237,7 +237,7 @@
         minFrameRate="5" maxFrameRate="33" />
 
     <AudioEncoderCap name="amrnb" enabled="true"
-        minBitRate="1" maxBitRate="320000"
+        minBitRate="4750" maxBitRate="12200"
         minSampleRate="8000" maxSampleRate="8000"
         minChannels="1" maxChannels="1" />
 
