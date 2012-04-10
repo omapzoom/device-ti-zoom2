@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-#DEVICE_PACKAGE_OVERLAYS := device/ti/zoom2/overlay
+DEVICE_PACKAGE_OVERLAYS := device/ti/zoom2/overlay
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
@@ -87,6 +87,7 @@ PRODUCT_PACKAGES += audio.a2dp.default
 PRODUCT_PACKAGES += \
 	dhcpcd.conf \
         wpa_supplicant.conf \
+        hostapd.conf \
 	wifical.sh \
 	TQS_D_1.7.ini \
 	TQS_D_1.7_127x.ini \
