@@ -192,7 +192,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         out/target/product/zoom2/obj/lib/hwcomposer.omap3.so:system/vendor/lib/hw/hwcomposer.omap3.so \
 	out/target/product/zoom2/obj/lib/hwcomposer.omap3.so:system/lib/hw/hwcomposer.omap3.so \
-        out/target/product/zoom2/obj/lib/libstagefrighthw.so:system/vendor/lib/hw/libstagefrighthw.so
+        out/target/product/zoom2/obj/lib/libstagefrighthw.so:system/vendor/lib/hw/libstagefrighthw.so \
+        out/target/product/zoom2/obj/lib/camera.omap3.so:system/lib/hw/camera.omap3.so
 
 
   
