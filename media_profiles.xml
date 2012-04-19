@@ -87,9 +87,9 @@
                    height="144"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
@@ -99,9 +99,9 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
@@ -111,9 +111,9 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
@@ -125,7 +125,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
@@ -224,7 +224,7 @@
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="8000" maxBitRate="64000"
         minSampleRate="8000" maxSampleRate="96000"
-        minChannels="2" maxChannels="2" />
+        minChannels="1" maxChannels="2" />
 
     <VideoDecoderCap name="wmv" enabled="true" />
     <AudioDecoderCap name="wma" enabled="true" />
