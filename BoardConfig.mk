@@ -18,10 +18,7 @@ TARGET_NO_KERNEL := true
 
 # Modem
 TARGET_NO_RADIOIMAGE := true
-#added sasken Raviha
 BOARD_EGL_CFG := device/ti/zoom2/egl.cfg
-
-#added by bharath
 USE_OPENGL_RENDERER := false
 
 # HW Graphcis
