@@ -19,7 +19,7 @@ TARGET_NO_KERNEL := true
 # Modem
 TARGET_NO_RADIOIMAGE := true
 BOARD_EGL_CFG := device/ti/zoom2/egl.cfg
-USE_OPENGL_RENDERER := false
+USE_OPENGL_RENDERER := true
 
 # HW Graphcis
 #OMAP3_GL := false
