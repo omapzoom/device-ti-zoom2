@@ -232,12 +232,15 @@ chmod 0777 /dev/dsscomp
 
     chmod 0777 /sys/devices/platform/omapdss/display0/name
     chmod 0777 /sys/devices/platform/omapdss/display1/name
+    chmod 0777 /sys/devices/platform/omapdss/display2/name
 
     chmod 0777 /sys/devices/platform/omapdss/display0/enabled
     chmod 0777 /sys/devices/platform/omapdss/display1/enabled
+    chmod 0777 /sys/devices/platform/omapdss/display2/enabled
 
     chmod 0777 /sys/devices/platform/omapdss/display1/timings
     chmod 0777 /sys/devices/platform/omapdss/display0/timings
+    chmod 0777 /sys/devices/platform/omapdss/display2/timings
 
     chmod 0777 /sys/devices/platform/omapdss/overlay0/manager
     chmod 0777 /sys/devices/platform/omapdss/overlay1/manager
